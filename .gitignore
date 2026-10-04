@@ -1,0 +1,64 @@
+# ─── Dependencies ────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.*
+
+# ─── Build outputs ───────────────────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.output/
+
+# ─── Environment & secrets ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── OS / Editor artefacts ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# ─── Windows scripts (local only) ────────────────────────────────────────────
+*.bat
+*.cmd
+
+# ─── Archive / Binary artefacts ──────────────────────────────────────────────
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+*.local
+*.tsbuildinfo
+*.pem
+*.cer
+*.key
+.vercel/
+coverage/
+
+# ─── Temporary / junk files ──────────────────────────────────────────────────
+*.tmp
+*.bak
+New Text Document.txt
