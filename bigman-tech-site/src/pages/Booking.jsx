@@ -39,7 +39,7 @@ export default function Booking() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <MagneticButton className="btn-lg" onClick={() => window.open('https://wa.me/message', '_blank')}>
+            <MagneticButton className="btn-lg" onClick={() => window.open('https://wa.me/2349078191975', '_blank')}>
               Book via WhatsApp
             </MagneticButton>
             <p style={{ color: 'var(--gray-400)', fontSize: '0.875rem', marginTop: '1rem' }}>
