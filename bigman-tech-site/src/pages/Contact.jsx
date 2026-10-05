@@ -26,7 +26,7 @@ export default function Contact() {
 
     try {
       // Using Web3Forms endpoint for direct email delivery to thebigmantech@gmail.com
-      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY';
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'e85f266c-e554-46dc-8780-888ceeea60e9';
       
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
