@@ -122,7 +122,7 @@ export default function Contact() {
               </div>
               <div className="contact-info__block">
                 <strong className="contact-info__label">Email</strong>
-                <a href="mailto:hello@bigtechsolutions.com" className="contact-info__link">hello@bigtechsolutions.com</a>
+                <a href="mailto:thebigmantech@gmail.com" className="contact-info__link">thebigmantech@gmail.com</a>
               </div>
             </div>
           </motion.div>

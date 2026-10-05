@@ -43,7 +43,7 @@ export default function Booking() {
               Book via WhatsApp
             </MagneticButton>
             <p style={{ color: 'var(--gray-400)', fontSize: '0.875rem', marginTop: '1rem' }}>
-              Or email us at <a href="mailto:hello@bigtechsolutions.com" style={{ color: 'var(--black)', textDecoration: 'underline' }}>hello@bigtechsolutions.com</a>
+              Or email us at <a href="mailto:thebigmantech@gmail.com" style={{ color: 'var(--black)', textDecoration: 'underline' }}>thebigmantech@gmail.com</a>
             </p>
           </div>
         </motion.div>

@@ -39,7 +39,7 @@ export default function Footer() {
             <h3 className="footer__heading">Connect</h3>
             <a href="#" className="footer__link">Twitter / X</a>
             <a href="#" className="footer__link">LinkedIn</a>
-            <a href="#" className="footer__link">Instagram</a>
+            <a href="https://www.instagram.com/_bigtech__" target="_blank" rel="noopener noreferrer" className="footer__link">Instagram</a>
           </div>
         </div>
 
