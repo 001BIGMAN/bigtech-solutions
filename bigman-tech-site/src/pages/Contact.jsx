@@ -25,47 +25,37 @@ export default function Contact() {
     setStatus({ submitting: true, success: false, error: null });
 
     try {
-      // Using Web3Forms endpoint for direct email delivery to thebigmantech@gmail.com
       const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'e85f266c-e554-46dc-8780-888ceeea60e9';
       
+      const payload = new FormData();
+      payload.append('access_key', accessKey);
+      payload.append('name', formData.name);
+      payload.append('email', formData.email);
+      payload.append('company', formData.company || 'N/A');
+      payload.append('budget', formData.budget || 'Not specified');
+      payload.append('message', formData.message);
+      payload.append('subject', `New Project Inquiry from ${formData.name}`);
+      payload.append('from_name', 'BigTech Solutions Website');
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: accessKey,
-          name: formData.name,
-          email: formData.email,
-          company: formData.company || 'N/A',
-          budget: formData.budget || 'Not specified',
-          message: formData.message,
-          subject: `New Project Inquiry from ${formData.name}`,
-          from_name: 'BigTech Solutions Website'
-        })
+        body: payload
       });
 
       const result = await response.json();
 
-      if (result.success || response.ok) {
+      if (result.success) {
         setStatus({ submitting: false, success: true, error: null });
         setFormData({ name: '', email: '', company: '', budget: '', message: '', consent: false });
       } else {
-        // Fallback or explicit error message
         throw new Error(result.message || 'Form submission failed');
       }
     } catch (err) {
-      console.warn("Web3Forms error, redirecting via email link:", err);
-      // Fallback: If no API key configured yet, gracefully open email client
-      const mailtoSubject = encodeURIComponent(`Project Inquiry: ${formData.name}`);
-      const mailtoBody = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nBudget: ${formData.budget}\n\nProject Details:\n${formData.message}`);
-      window.location.href = `mailto:thebigmantech@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-      
+      console.error("Web3Forms error:", err);
       setStatus({ 
         submitting: false, 
-        success: true, 
-        error: null 
+        success: false, 
+        error: err.message || "Failed to send inquiry. Please try again or email us directly at thebigmantech@gmail.com" 
       });
     }
   };
@@ -116,6 +106,20 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-form">
+                {status.error && (
+                  <div style={{
+                    background: 'rgba(239, 68, 68, 0.1)',
+                    border: '1px solid rgba(239, 68, 68, 0.3)',
+                    borderRadius: '0.75rem',
+                    padding: '1rem 1.25rem',
+                    color: '#dc2626',
+                    fontSize: '0.9375rem',
+                    marginBottom: '1.5rem',
+                    lineHeight: 1.5
+                  }}>
+                    <strong>Note:</strong> {status.error}
+                  </div>
+                )}
                 <div className="contact-form__row">
                   <div className="form-group">
                     <label htmlFor="name">Name</label>
