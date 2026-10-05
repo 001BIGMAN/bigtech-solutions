@@ -878,3 +878,13 @@ h1, h2, h3, h4, h5, h6 {
 .text-center { text-align: center; }
 .w-full { width: 100%; }
 .min-h-screen { min-height: 100vh; }
+
+/* ── Responsive: About Visionary + Projects Graphic Design ── */
+@media (max-width: 768px) {
+  .visionary-grid,
+  [style*="gridTemplateColumns: '1fr 1.4fr'"],
+  [style*="gridTemplateColumns: '1fr 1fr'"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}

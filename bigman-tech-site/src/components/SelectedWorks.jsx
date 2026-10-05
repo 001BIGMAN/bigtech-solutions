@@ -21,6 +21,11 @@ const projects = [
     category: 'E-commerce / Brand',
     url: 'https://zee-and-tee.vercel.app/',
   },
+  {
+    name: 'Tofeb Academy',
+    category: 'Education / E-learning Platform',
+    url: 'https://tofebacademy.com.ng/',
+  },
 ];
 
 const IframeCard = ({ project, index }) => {

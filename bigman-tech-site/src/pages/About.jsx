@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Award, Users, Target, Clock } from 'lucide-react';
+import visionaryImg from '../assets/visionary.jpg';
+
 
 const values = [
   { icon: Award, title: "Excellence", desc: "We hold ourselves to the highest standards. Every pixel, every line of code is crafted with intention." },
@@ -67,7 +69,79 @@ export default function About() {
           </motion.div>
         </div>
 
+        {/* ── Visionary & Mission ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1.4fr',
+            gap: '4rem',
+            alignItems: 'center',
+            marginBottom: '6rem',
+            background: 'var(--black)',
+            borderRadius: '1.5rem',
+            padding: '3.5rem',
+            overflow: 'hidden',
+          }}
+        >
+          <div style={{ position: 'relative' }}>
+            <img
+              src={visionaryImg}
+              alt="The Visionary — BigTech Solutions Founder"
+              style={{
+                width: '100%',
+                aspectRatio: '3/4',
+                objectFit: 'cover',
+                borderRadius: '1rem',
+                display: 'block',
+                filter: 'grayscale(10%)',
+              }}
+            />
+            <div style={{
+              position: 'absolute',
+              bottom: '1rem',
+              left: '1rem',
+              background: 'rgba(255,255,255,0.08)',
+              backdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              borderRadius: '0.625rem',
+              padding: '0.6rem 1rem',
+            }}>
+              <p style={{ color: '#fff', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                The Visionary
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
+              Leadership & Mission
+            </p>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.03em', color: '#fff', lineHeight: 1.15, marginBottom: '1.5rem' }}>
+              Built on vision.<br />Driven by purpose.
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, fontSize: '1rem', marginBottom: '1.25rem' }}>
+              BigTech Solutions was born from a conviction that African businesses deserve world-class digital experiences. Our founder set out to bridge the gap between global design standards and the local market's unique energy.
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2rem' }}>
+              Our mission is simple: <span style={{ color: '#fff', fontWeight: 600 }}>empower every client to compete at the highest level</span> — through strategy, design, and technology that works.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {['Excellence in every deliverable', 'Transparency in every relationship', 'Innovation driven by real results'].map((point, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#fff', flexShrink: 0 }} />
+                  <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9375rem' }}>{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
         <div>
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
